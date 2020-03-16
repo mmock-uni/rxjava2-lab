@@ -7,6 +7,11 @@ public class Code3 {
 
     public static void main(String... args) {
         Observable.just("Black Canary", "Catwoman", "Elektra")
+        .subscribe(
+                System.out::println,
+                Throwable::printStackTrace,
+                () -> System.out.println("All worked")
+        )
             // Use the `subscribe` method using the 3 parameters
             // to receive (and print):
             // 1. the item

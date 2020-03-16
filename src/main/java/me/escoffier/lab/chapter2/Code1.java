@@ -18,6 +18,8 @@ public class Code1 {
 
     public static void main(String... args) {
         Observable.fromIterable(SUPER_HEROES)
+                .doOnNext(single -> System.out.println("Next>> " + single ))
+                .doOnComplete(() -> System.out.println("done"))
             // Use doOnNext and doOnComplete to print messages
             // on each item and when the stream complete
             .subscribe();

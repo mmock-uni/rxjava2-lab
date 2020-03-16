@@ -17,8 +17,8 @@ public class Code1 {
 
     public static void main(String... args) {
         Observable<String> stream = Observable.fromIterable(SUPER_HEROES);
-        stream.subscribe(
-            name -> System.out.println(name)
-        );
+        stream
+        .map(String::toUpperCase)
+                .subscribe(System.out::println);
     }
 }

@@ -17,6 +17,12 @@ public class Code5 {
 
         client().get("/heroes").rxSend()
             .map(HttpResponse::bodyAsJsonObject)
+            .filter(single -> contains(name1, single))
+            .subscribe(
+                    x -> System.out.println("Yes, " + name1 + " is a super hero"),
+                    Throwable::printStackTrace,
+                    () -> System.out.println("No, " + name1 + " is not a super hero")
+            )
             // Use the filter operator and contains to check if the is a hero named `name1`
 
             // Don't forget to subscribe
@@ -25,6 +31,12 @@ public class Code5 {
 
         client().get("/heroes").rxSend()
             .map(HttpResponse::bodyAsJsonObject)
+            .filter(single -> contains(name2, single))
+            .subscribe(
+                    x -> System.out.println("Yes, " + name2 + " is a super hero"),
+                    Throwable::printStackTrace,
+                    () -> System.out.println("No, " + name2 + " is not a super hero")
+            )
             // Use the filter operator and contains to check if the is a hero named `name2`
 
             // Don't forget to subscribe

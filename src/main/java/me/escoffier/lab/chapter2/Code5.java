@@ -11,6 +11,7 @@ public class Code5 {
             subscriber.onNext("Black Canary");
             subscriber.onNext("Catwoman");
             // Inject an error using the onError
+            subscriber.onError(new Throwable("oh no"));
             // method
             subscriber.onNext("Elektra");
             // Notify the completion
