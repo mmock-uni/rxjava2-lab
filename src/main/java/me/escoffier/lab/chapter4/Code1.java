@@ -11,6 +11,7 @@ public class Code1 {
 
         villains_names()
             // Accept only super villains containing the word "Queen"
+            .filter(single -> single.contains("Queen"))
             .subscribe(System.out::println);
 
     }

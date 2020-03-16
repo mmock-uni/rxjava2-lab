@@ -11,11 +11,6 @@ public class Code7 {
 
     public static void main(String[] args) {
         fs()
-        .rxReadFile("hello.txt", Buffer.buffer("hello"))
-                .subscribe(
-                        () -> System.out.println("File written"),
-                        Throwable::printStackTrace
-                )
             // Use rxWriteFile to write a message to a file
             // This method accept a buffer, create a buffer with Buffer.buffer("message")
 
