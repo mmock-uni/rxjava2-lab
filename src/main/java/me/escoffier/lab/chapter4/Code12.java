@@ -16,6 +16,10 @@ public class Code12 {
             heroes().map(Character::getSuperpowers)
                 .flatMap(Flowable::fromIterable);
 
+        villains_superpowers.mergeWith(heroes_superpowers)
+                .distinct()
+                .count()
+                .subscribe(System.out::println);
         // Merge both stream using the `mergeWith` operator
 
         // Filter out duplicates using the `distinct` operator

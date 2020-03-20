@@ -27,6 +27,8 @@ public class Code13 {
             .rxSend()
             .map(HttpResponse::body);
 
+        random_heroes.zipWith(random_villains, (h, v) -> fight(h, v))
+                .subscribe( winner -> System.out.println(winner.encodePrettily()));
         // Associate the items emitted by both single and call the fight method.
         // In the subscribe print the returned json object (using encodePrettily).
         
